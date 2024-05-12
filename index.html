@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پخش کننده ویدیو داینامیک</title>
+<style>
+  body {
+    text-align: center;
+    margin-top: 50px;
+  }
+  video {
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>پخش کننده ویدیو داینامیک</h1>
+<input type="text" id="videoUrl" placeholder="لینک ویدیو را اینجا وارد کنید" style="width: 80%; padding: 10px;">
+<button onclick="playVideo()" style="padding: 10px 20px; margin-top: 10px;">پخش ویدیو</button>
+<video id="videoPlayer" controls style="display:none;"></video>
+
+<script>
+  function playVideo() {
+    var url = document.getElementById('videoUrl').value;
+    if(url) {
+      var player = document.getElementById('videoPlayer');
+      player.src = url;
+      player.style.display = 'block';
+      player.load();
+      player.play();
+    } else {
+      alert('لطفاً لینک ویدیو را وارد کنید.');
+    }
+  }
+</script>
+
+</body>
+</html>
